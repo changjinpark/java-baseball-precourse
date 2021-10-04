@@ -80,4 +80,20 @@ public class InputValidationTest {
         //then
         assertThat(errMsg).isEqualTo("[ERROR] 입력 값에 중복된 값이 입력되었습니다.");
     }
+
+    @Test
+    @DisplayName("게임 종료 값에 1과 2 이외의 수가 들어왔을 때")
+    void validateSelectGameStatusTest() {
+        //given
+        String errMsg = "";
+        int status = 3;
+
+        //when
+        if((status != GAME_START) && (status != GAME_STOP)) {
+            errMsg = "[ERROR] 입력값이 잘못 되었습니다. 게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+        }
+
+        //then
+        assertThat(errMsg).isEqualTo("[ERROR] 입력값이 잘못 되었습니다. 게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+    }
 }
