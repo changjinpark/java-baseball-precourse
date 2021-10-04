@@ -15,4 +15,10 @@ public class GameConstant {
     public static final String BALL = "볼 ";
     public static final String STRIKE = "스트라이크 ";
     public static final String NOTHING = "낫싱 ";
+
+    public static final String INPUT_LENGTH_ERROR_MESSAGE = "[ERROR] 입력 값의 길이가 3이 아닙니다.";
+    public static final String INPUT_NOT_DIGIT_ERROR_MESSAGE = "[ERROR] 입력 값에 숫자가 아닌 값이 입력되었습니다.";
+    public static final String INPUT_ZERO_ERROR_MESSAGE = "[ERROR] 입력 값에 0이 포함되었습니다.";
+    public static final String INPUT_DUPLICATE_ERROR_MESSAGE = "[ERROR] 입력 값에 중복된 값이 입력되었습니다.";
+    public static final String INPUT_INVALID_GAME_STATUS_ERROR_MESSAGE = "[ERROR] 입력값이 잘못 되었습니다. 게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
 }
