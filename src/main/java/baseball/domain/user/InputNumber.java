@@ -26,4 +26,11 @@ public class InputNumber {
         }
         return userNumber;
     }
+
+    public static int selectGameStatus() {
+        System.out.println(SELECT_GAME_STATUS_MESSAGE);
+        int status = Integer.parseInt(readLine());
+        validateSelectGameStatus(status);
+        return status;
+    }
 }
