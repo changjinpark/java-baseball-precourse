@@ -3,7 +3,6 @@ package baseball.domain.user;
 import java.util.*;
 
 import static baseball.constant.GameConstant.*;
-import static baseball.domain.user.InputNumber.selectGameStatus;
 
 public class InputValidation {
 
@@ -34,6 +33,12 @@ public class InputValidation {
         }
         if(set.size() != 3) {
             System.out.println(INPUT_DUPLICATE_ERROR_MESSAGE);
+        }
+    }
+    public static void validateSelectGameStatus(int status) {
+        if((status != GAME_START) && (status != GAME_STOP)) {
+            System.out.println(INPUT_INVALID_GAME_STATUS_ERROR_MESSAGE);
+
         }
     }
 }
