@@ -20,7 +20,12 @@ public class BaseBallGame {
             List<Integer> userNumber = getUserNumber();//user 숫자 입력
             strikeCount = judgeGame(computerNumber, userNumber);
         }
-        return -1;//endGame();
+        return endGame();
+    }
+
+    private int endGame() {
+        System.out.println(GAME_END_MESSAGE);
+        return selectGameStatus();
     }
 
     private int judgeGame(List<Integer> computerNumber, List<Integer> userNumber) {
