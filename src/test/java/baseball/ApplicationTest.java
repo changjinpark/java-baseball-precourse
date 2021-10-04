@@ -4,6 +4,7 @@ import nextstep.test.NSTest;
 import nextstep.utils.Randoms;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
@@ -35,6 +36,39 @@ public class ApplicationTest extends NSTest {
                     .thenReturn(5, 8, 9);
             run("713", "1", "597", "589", "2");
             verify("3스트라이크", "게임 끝", "1스트라이크 1볼");
+        }
+    }
+
+    @Test
+    @DisplayName("3스트라이크")
+    void _3스트라이크() {
+        try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+            mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+                    .thenReturn(7, 1, 3);
+            running("713");
+            verify( "3스트라이크");
+        }
+    }
+
+    @Test
+    @DisplayName("1스트라이크 1볼")
+    void _1스트라이크_1볼() {
+        try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+            mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+                    .thenReturn(7, 1, 3);
+            running("736");
+            verify( "1스트라이크 1볼");
+        }
+    }
+
+    @Test
+    @DisplayName("3볼")
+    void _3볼() {
+        try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+            mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+                    .thenReturn(7, 1, 3);
+            running("371");
+            verify("3볼");
         }
     }
 
