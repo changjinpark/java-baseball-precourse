@@ -18,8 +18,15 @@ public class BaseBallGame {
         while (strikeCount != GAME_END) {
             System.out.print(INPUT_USER_BALL_MESSAGE);
             List<Integer> userNumber = getUserNumber();//user 숫자 입력
-            //strikeCount = judgeGame(computerNumber, userNumber);
+            strikeCount = judgeGame(computerNumber, userNumber);
         }
         return -1;//endGame();
+    }
+
+    private int judgeGame(List<Integer> computerNumber, List<Integer> userNumber) {
+        int strikeCount = calculateStrike(computerNumber, userNumber);//Strike 수
+        int ballCount = calculateBall(computerNumber, userNumber);//Ball 수
+        printGameResult(strikeCount, ballCount);//결과 메세지 출력
+        return strikeCount;
     }
 }
